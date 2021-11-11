@@ -2,41 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss
-
-{
-
-    private int hp = 100; //体力
-    private int power = 25; //攻撃力
-
-    // 攻撃用の関数
-    public void Attack()
-
-    {
-        Debug.Log(this.power + "のダメージを与えた");
-    }
-
-    // 防御用の関数
-    public void Defence(int damage)
-    {
-        Debug.Log(damage + "のダメージを受けた");
-        // 残りのhpを減らす
-        this.hp -= damage;
-    }
-
-}
-
 public class Test : MonoBehaviour
 {
-    void Start()
+    // Use this for initialization
+    private void Start()
     {
-        // Bossクラスの変数を宣言してインスタンスを代入
-        Boss lastboss = new Boss();
+        // 条件1）要素の個数が5の、int型の配列arrayを宣言して好きな値で初期化
+        int[] array = { 37, 22, 83, 46, 15 };
 
-        // 攻撃用の関数を呼び出す
-        lastboss.Attack();
-        // 防御用の関数を呼び出す
-        lastboss.Defence(3);
+        // 条件2）for文を使い
+        for (int i = 0; i< array.Length; i++)
+        {
+            //配列の要素の値を順番に表示する
+            Debug.Log(array[i]);
+
+        }
+            
     }
 
     // Update is called once per frame
