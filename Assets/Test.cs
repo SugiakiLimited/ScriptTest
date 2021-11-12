@@ -11,9 +11,9 @@ public class Test : MonoBehaviour
         int[] array = { 37, 22, 83, 46, 15 };
 
         // 条件2）for文を使い
-        for (int i = 0; i< array.Length; i++)
+        for (int i = array.Length - 1; i>= 0 ; i--)
         {
-            //配列の要素の値を順番に表示する
+            //配列の要素の値を逆順に表示する
             Debug.Log(array[i]);
 
         }
