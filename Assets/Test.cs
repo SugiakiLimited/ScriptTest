@@ -2,27 +2,48 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public class Boss
+{
+    private int mp = 53; // mp
+
+    //魔法攻撃用の関数
+    public void Magic()
+    {
+        if (this.mp >= 5)
+        {
+            this.mp -= 5;
+            Debug.Log("魔法攻撃をした。残りMPは" + this.mp + "。");
+        }
+        else
+        {
+            Debug.Log("MPが足りないため、魔法が使えない。");
+        }
+   
+    } 
+
+    
+}
+
 public class Test : MonoBehaviour
 {
-    // Use this for initialization
-    private void Start()
+    void Start()
     {
-        // 条件1）要素の個数が5の、int型の配列arrayを宣言して好きな値で初期化
-        int[] array = { 37, 22, 83, 46, 15 };
+        // Bossクラスの変数を宣言してインスタンスを代入
+        Boss lastboss = new Boss();
 
-        // 条件2）for文を使い
-        for (int i = array.Length - 1; i>= 0 ; i--)
+        for(int i = 0; i < 11; i++)
         {
-            //配列の要素の値を逆順に表示する
-            Debug.Log(array[i]);
-
+            // 魔法攻撃用の関数を呼び出す
+            lastboss.Magic();
         }
-            
+
+        
     }
 
     // Update is called once per frame
-    void Update ()
+    void Update()
     {
         
     }
+
 }
